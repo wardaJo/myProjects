@@ -1,0 +1,23 @@
+<div class="content"> 
+  <!--this element will show just if the data under fetching so we check of that using variable isLoading-->
+    <div *ngIf="isLoading" class="loading-overlay">
+        Loading...
+    </div> 
+<!-- this element show details of the user-->
+  <div class="user-details-container">
+    <div class="avatar">
+      <img [src]="userDetail?.avatar" alt="User Avatar">
+    </div>
+    <div class="info">
+        <div>First Name: {{ userDetail?.first_name }}</div>
+        <div>Last Name: {{ userDetail?.first_name }}</div>
+        <p>Email: {{ userDetail?.email }}</p>
+    </div>
+
+    <!-- this element to go back to the main list of the users-->
+    <div class="action-button" (click)="goBack();">
+        <span>Back</span>
+       <fa-icon class="fa-1x fas fa-backward"> </fa-icon> 
+    </div>
+  </div>
+</div>

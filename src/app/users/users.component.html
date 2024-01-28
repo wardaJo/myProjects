@@ -1,0 +1,44 @@
+<div *ngIf="users.length>0">
+  <!--this element will show just if the data under fetching so we check of that using variable isLoading-->
+  <div *ngIf="isLoading" class="loading-overlay">
+    Loading...
+  </div> 
+  
+  <!-- this element show details of the user-->
+  <div class="pageS"> 
+
+    <!--this element is arrow to move to the next page and we use fontawesome-free for design -->
+    <div class="arrow" (click)="changePage('prev')" >
+        <fa-icon class="fa-1x fas fa-chevron-circle-left"> </fa-icon> 
+    </div>
+
+    <!--this element is the list of users in one page and we use matCard-->
+    
+    <div class="user-list">
+      <div *ngFor="let user of users" class="user-card">
+      <mat-card>
+          <img mat-card-image [src]="user.avatar" alt="{{ user.first_name}}">
+          <mat-card-content >
+            <a class="clickStyle" routerLink="/user/{{user.id}}" routerLinkActive="active">
+              <p>{{ user.first_name }} {{ user.last_name }}</p>
+            </a>
+          </mat-card-content>
+      </mat-card>
+    </div>
+    </div>
+
+    <!--this element is arrow to move to the previous page and we use fontawesome-free for design-->
+    <div class="arrow"  (click)="changePage('next')" >
+        <fa-icon class="fa-1x fas fa-chevron-circle-right"> </fa-icon>
+    </div>
+    
+  </div>
+
+  <!-- here we show the page number -->
+<div class="center"> Page:{{page}}/{{totalPages}}</div>
+</div>
+
+<!--in case no any data is fetched we show clear message to the customer-->
+<div *ngIf="users.length<=0" style="color:red; text-align: center;">
+  No Related Users ...
+</div>

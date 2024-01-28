@@ -1,0 +1,4 @@
+<!--we are using here 2 ways Data Binding to listen to any change on the input-->
+<div class="search-container">
+    <input type="text" placeholder="Enter User ID..."  [(ngModel)]="searchKey" (ngModelChange)="onSearch($event)" />
+</div>
