@@ -1,3 +1,5 @@
+######  please read the Documentation word file to know more on the app ######
+
 # Assessment
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.

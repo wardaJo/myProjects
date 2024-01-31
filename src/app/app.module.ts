@@ -39,8 +39,12 @@ import { TestMngStateComponent } from './test-mng-state/test-mng-state.component
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
   ],
   providers: [UserService],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
+export class AppModule { 
+ 
+}
 export class AppModule { 
  
 }
